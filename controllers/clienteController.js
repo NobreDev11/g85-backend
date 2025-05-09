@@ -47,4 +47,16 @@ exports.atualizarCliente = async (req, res) => {
       res.status(500).json({ message: 'Erro ao atualizar cliente', error });
     }
   };
+
+  exports.excluirCliente = async (req, res) => {
+    try {
+      const cliente = await Cliente.findByIdAndDelete(req.params.id);
+      if (!cliente) return res.status(404).json({ message: 'Cliente não encontrado' });
+  
+      res.json({ message: 'Cliente excluído com sucesso' });
+    } catch (error) {
+      res.status(500).json({ message: 'Erro ao excluir cliente', error });
+    }
+  };
+  
   

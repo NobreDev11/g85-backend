@@ -9,3 +9,5 @@ router.get('/clientes/:id', clienteController.buscarClientePorId);
 module.exports = router;
 
 router.put('/clientes/:id', clienteController.atualizarCliente);
+
+router.delete('/clientes/:id', clienteController.excluirCliente);
