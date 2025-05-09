@@ -20,3 +20,7 @@ mongoose.connect(process.env.MONGODB_URI)
     );
   })
   .catch((err) => console.error(err));
+
+  const clienteRoutes = require('./routes/clienteRoutes');
+app.use('/api', clienteRoutes);
+
