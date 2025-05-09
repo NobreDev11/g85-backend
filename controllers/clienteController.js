@@ -29,3 +29,22 @@ exports.listarClientes = async (req, res) => {
     res.status(500).json({ message: 'Erro ao listar clientes', error });
   }
 };
+
+exports.atualizarCliente = async (req, res) => {
+    try {
+      const clienteAtualizado = await Cliente.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
+      );
+  
+      if (!clienteAtualizado) {
+        return res.status(404).json({ message: 'Cliente não encontrado' });
+      }
+  
+      res.json({ message: 'Cliente atualizado com sucesso', cliente: clienteAtualizado });
+    } catch (error) {
+      res.status(500).json({ message: 'Erro ao atualizar cliente', error });
+    }
+  };
+  
