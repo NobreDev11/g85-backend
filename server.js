@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const clienteRoutes = require('./routes/clienteRoutes');
-const veiculoRoutes = require('./routes/veiculoRoutes'); // ✅ ADICIONADO
+const veiculoRoutes = require('./routes/veiculoRoutes'); // ✅ IMPORTAÇÃO
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -17,9 +17,9 @@ app.use(express.json());
 // Rotas
 app.use('/api', usuarioRoutes);
 app.use('/api', clienteRoutes);
-app.use('/api', veiculoRoutes); // ✅ ADICIONADO
+app.use('/api', veiculoRoutes); // ✅ REGISTRO DA ROTA
 
-// MongoDB
+// Conexão com MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
