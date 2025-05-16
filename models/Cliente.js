@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const clienteSchema = new mongoose.Schema({
-  nome: { type: String, required: true },
-  email: { type: String },
-  telefone: { type: String }
+  nome: String,
+  email: String,
+  telefone: String
 });
 
 module.exports = mongoose.model('Cliente', clienteSchema);
