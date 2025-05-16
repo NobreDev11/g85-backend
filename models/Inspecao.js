@@ -14,6 +14,11 @@ const inspecaoSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
+  extras: {
+    type: Map,
+    of: String,
+    default: {}
+  },
   data: {
     type: Date,
     default: Date.now
