@@ -47,3 +47,15 @@ exports.atualizarVeiculo = async (req, res) => {
     res.status(500).json({ message: 'Erro ao atualizar veículo', error });
   }
 };
+
+exports.excluirVeiculo = async (req, res) => {
+  try {
+    const veiculo = await Veiculo.findByIdAndDelete(req.params.id);
+    if (!veiculo) {
+      return res.status(404).json({ message: 'Veículo não encontrado' });
+    }
+    res.json({ message: 'Veículo excluído com sucesso' });
+  } catch (error) {
+    res.status(500).json({ message: 'Erro ao excluir veículo', error });
+  }
+};
