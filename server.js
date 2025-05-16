@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
-const clienteRoutes = require('./routes/clienteRoutes');
+const clientesRoutes = require('./routes/clientesRoutes');
 const veiculoRoutes = require('./routes/veiculoRoutes');
 const servicoRoutes = require('./routes/servicoRoutes');
 const inspecaoRoutes = require('./routes/inspecaoRoutes');
