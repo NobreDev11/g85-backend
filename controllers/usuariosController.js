@@ -1,5 +1,3 @@
-// controllers/usuariosController.js
-
 exports.registrarUsuario = (req, res) => {
   const { nome, email, password } = req.body;
 
