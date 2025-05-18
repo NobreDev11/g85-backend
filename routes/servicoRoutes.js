@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const servicoController = require('../controllers/servicoController');
+const auth = require('../middlewares/authMiddleware');
 
-// Rota para registrar um novo serviço
-router.post('/servicos', servicoController.criarServico);
+router.post('/servicos', auth, servicoController.criarServico);
 
 module.exports = router;
