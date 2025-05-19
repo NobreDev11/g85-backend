@@ -8,6 +8,7 @@ const veiculoRoutes = require('./routes/veiculoRoutes');
 const servicoRoutes = require('./routes/servicoRoutes');
 const inspecaoRoutes = require('./routes/inspecaoRoutes');
 const usuariosRoutes = require('./routes/usuariosRoutes');
+const avariaRoutes = require('./routes/avariaRoutes');
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.use('/api', veiculoRoutes);
 app.use('/api', servicoRoutes);
 app.use('/api', inspecaoRoutes);
 app.use('/api', usuariosRoutes);
+app.use('/api', avariaRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
