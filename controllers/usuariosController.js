@@ -60,9 +60,13 @@ exports.login = async (req, res) => {
 
 exports.perfilUsuario = async (req, res) => {
   try {
-    const usuario = req.usuario;
-    res.status(200).json({ usuario });
+    if (!req.usuario) {
+      return res.status(400).json({ message: 'Usuário não autenticado.' });
+    }
+
+    res.status(200).json({ usuario: req.usuario });
   } catch (error) {
+    console.error('Erro no perfilUsuario:', error.message);
     res.status(500).json({ message: 'Erro ao obter perfil do usuário.' });
   }
 };
