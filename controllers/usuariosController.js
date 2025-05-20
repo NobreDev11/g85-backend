@@ -57,3 +57,12 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: 'Erro interno no servidor.' });
   }
 };
+
+exports.perfilUsuario = async (req, res) => {
+  try {
+    const usuario = req.usuario;
+    res.status(200).json({ usuario });
+  } catch (error) {
+    res.status(500).json({ message: 'Erro ao obter perfil do usuário.' });
+  }
+};
